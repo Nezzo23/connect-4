@@ -5,3 +5,8 @@ import numpy as np
 
 def playing_board():
     board = np.zeros ((6,7))
+    return board
+
+board = playing_board()
+print(board)
+
