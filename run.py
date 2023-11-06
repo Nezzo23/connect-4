@@ -7,6 +7,17 @@ def playing_board():
     board = np.zeros ((6,7))
     return board
 
+def drop_coin(board, row, col, piece):
+    board[row][col] = coin
+
+def valid_location(board, col):
+    return board[5][col] == 0
+
+def next_open_row(board, col):
+    for row in range(6):
+        if board[row][col] == 0:
+            return row
+
 board = playing_board()
 game_over = False
 turn = 0
