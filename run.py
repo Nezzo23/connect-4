@@ -82,3 +82,10 @@ while not game_over:
     turn += 1
     turn = turn % 2
 
+    if valid_location(board, selection):
+        row = next_open_row(board, selection)
+        drop_coin(board, row, selection, 1 if turn == 0 else 2)
+        if winning_move(board, 1 if turn == 0 else 2):
+            print(f"Player {1 if turn == 0 else 2} wins!")
+            game_over = True
+        print(board)
