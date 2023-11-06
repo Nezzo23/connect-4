@@ -1,6 +1,6 @@
 import numpy as np
 
-
+print ("Welcome to Connect4")
 # Creating a board needed for the game. Table 6*7
 
 def playing_board():
@@ -62,12 +62,15 @@ def winning_move(board, coin):
             ):
                 return True
 
+def print_board(board):
+    print(np.flip(board,0))
 
 board = playing_board()
+print_board(board)
+
 game_over = False
 turn = 0
 
-print (board)
 
 # Setup conditions for the game (with loops)
 
@@ -88,4 +91,5 @@ while not game_over:
         if winning_move(board, 1 if turn == 0 else 2):
             print(f"Player {1 if turn == 0 else 2} wins!")
             game_over = True
-        print(board)
+        print_board(board)
+
